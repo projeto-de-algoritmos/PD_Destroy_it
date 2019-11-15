@@ -1,6 +1,6 @@
 
 
-# PD_Destroy_it
+# Destroy it
 
 **Conteúdo da Disciplina**: Programação dinamica<br>
 
