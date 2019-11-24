@@ -1,6 +1,6 @@
 
 
-# Destroy it
+# Fibonnaci
 
 **Conteúdo da Disciplina**: Programação dinamica<br>
 
@@ -11,21 +11,22 @@
 
 
 ## Sobre 
-Descreva os objetivos do seu projeto e como ele funciona. 
+Um programa que compara o tempo da função recursiva do fibonacci com a função que usa programação dinamica.
 
-## Screenshots
-Adicione 3 ou mais screenshots do projeto em funcionamento.
+
 
 ## Instalação 
-**Linguagem**: xxxxxx<br>
+**Linguagem**: python3<br>
 **Framework**: (caso exista)<br>
 Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
 
 ## Uso 
-Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
+digite no terminal 
+    
+    python3 fib.py
 
-## Outros 
-Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
+Caso demore muito para execultar pressione ctrl+c, comente a chamada para a função recursiva e execulte novamente.
+
 
 
 
