@@ -30,7 +30,8 @@ ll knapSack(ll W, vector <ll> wt, vector <ll> val, ll n,ll turn)
     } 
 
 // here we find the cards
-    ll dam = 0,reduc=-1;
+    ll dam = 0;
+    vector <ll> v;
     //bool first = true; 
     // stores the result of Knapsack 
     ll res = K[n][W];
@@ -46,27 +47,10 @@ ll knapSack(ll W, vector <ll> wt, vector <ll> val, ll n,ll turn)
         if (res == K[i - 1][w])  
             continue;         
         else {
-            // This item is included.
-            card_qtd++; 
-            reduc++;
+ 
+            v.push_back(val[i-1]);
 
-            //verify the double dam card and re-add her with double dam
-            if(!(card_qtd%10)){
-                if(!pq.empty()){
-                    pq = priority_queue<pair<ll,ll>>();
-                }
-                boost = true;
-            }
             pinf.push(val[i - 1]);
-            if(boost){
-                //first =false;
-                pq.push({val[i - 1],card_qtd - n-i});
-                if((not (card_qtd%10)) or (turn == 1)){
-                    if((turn == 1) and (card_qtd%10))
-                        max_cards.pop_back();
-                    max_cards.push_back(pq.top());
-                }
-            }
 
             dam += val[i-1]; 
             //prllf("%d ", wt[i - 1]); 
@@ -77,6 +61,29 @@ ll knapSack(ll W, vector <ll> wt, vector <ll> val, ll n,ll turn)
             w = w - wt[i - 1]; 
         } 
     } 
+
+    reverse(v.begin(),v.end());
+
+    for(ll &x : v){
+        card_qtd++; 
+
+        //verify the double dam card and re-add her with double dam
+        if(!(card_qtd%10)){
+            if(!pq.empty()){
+                pq = priority_queue<pair<ll,ll>>();
+            }
+            boost = true;
+        }
+        if(boost){
+            //first =false;
+            pq.push({x,card_qtd});
+            if((not (card_qtd%10)) or (turn == 1)){
+                if((turn == 1) and (card_qtd%10))
+                    max_cards.pop_back();
+                max_cards.push_back(pq.top());
+            }
+        }
+    }
     return dam;
 } 
 
