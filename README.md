@@ -25,7 +25,7 @@ digite no terminal
     
     python3 fib.py
 
-Caso demore muito para execultar pressione ctrl+c, comente a chamada para a função recursiva e execulte novamente.
+Caso demore muito para execultar pressione ctrl+c.
 
 
 
