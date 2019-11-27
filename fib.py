@@ -31,14 +31,14 @@ def dpFibonacci(n):
 if __name__ == "__main__":
     n = int(input("Fibonacci of: "))
 
-    t1 = time.time()
-    res = Fibonacci(n)
-    t2 = time.time()
-
-    print("recursive result:", res, "in time:", t2-t1)
-
     t3 = time.time()
     res = dpFibonacci(n)
     t4 = time.time()
 
     print("\ndp result:", res, "in time:", t4-t3)
+
+    t1 = time.time()
+    res = Fibonacci(n)
+    t2 = time.time()
+
+    print("recursive result:", res, "in time:", t2-t1)
